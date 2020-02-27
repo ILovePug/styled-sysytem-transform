@@ -7,8 +7,6 @@ const Box = styled.div`
   ${space}
 `;
 
-console.log(space)
-
 function App() {
   return (
     <Box  p={4}>

@@ -357,6 +357,16 @@ module.exports = function(webpackEnv) {
                 name: 'static/media/[name].[hash:8].[ext]',
               },
             },
+            {
+              test: /\.js$/,
+              exclude: /node_modules\/(?!(@styled-system)\/).*/,
+              use: {
+                loader: require.resolve('babel-loader'),
+                options: {
+                  plugins: ['./babel-plugin/styled-system-transform.js']
+                }
+              }
+            },
             // Process application JS with Babel.
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
             {
